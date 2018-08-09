@@ -399,7 +399,7 @@ module RackDAV
         end.to_xml
         response.body = [content]
         response["Content-Type"] = 'text/xml; charset=utf-8'
-        response["Content-Length"] = Rack::Utils.bytesize(content).to_s
+        response["Content-Length"] = content.bytesize.to_s
       end
 
       def multistatus
